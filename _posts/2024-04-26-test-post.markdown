@@ -1,0 +1,27 @@
+---
+layout: post
+title:  "Test post"
+date:   2024-04-26 03:05:53 +0300
+categories: jekyll update
+---
+This is a test post. This is my first time using [jekyll][jekyll-gh] so I wanted to check syntax highlighting, links (btw [my github][flutterdro-gh]) and `other stuff`.
+
+# Test code snippet
+
+{% highlight cpp %}
+namespace detail {
+template<typename Container1, template<typename...> typename Container2>
+struct fmp_rename_impl;
+template<
+    template<typename...> typename Container1, typename... Ts,
+    template<typename...> typename Container2>
+struct fmp_rename_impl<Container1<Ts...>, Container2> {
+    using type = Container2<Ts...>;
+};
+template<typename Container1, template<typename...> typename Container2>
+using fmp_rename = typename fmp_rename_impl<Container1, Container1>::type;
+}
+{% endhighlight %}
+
+[jekyll-gh]:     https://github.com/jekyll/jekyll
+[flutterdro-gh]: https://github.com/flutterdro
